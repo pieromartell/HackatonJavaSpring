@@ -24,8 +24,6 @@ public class Categoria {
 	@Column(name="estado")
 	boolean estado;
 	
-	
-
 	public boolean isEstado() {
 		return estado;
 	}
