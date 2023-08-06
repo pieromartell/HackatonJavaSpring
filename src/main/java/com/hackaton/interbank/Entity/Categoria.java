@@ -6,14 +6,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.ws.rs.core.Context;
 
+
+@Table(name="categoria")
 @Entity
 public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="idcategoria")
-	int idcategoria;
+	long idcategoria;
 	
 	@Column(name="nombre")
 	String nombre;
@@ -32,11 +34,11 @@ public class Categoria {
 		this.estado = estado;
 	}
 
-	public int getIdcategoria() {
+	public long getIdcategoria() {
 		return idcategoria;
 	}
 
-	public void setIdcategoria(int idcategoria) {
+	public void setIdcategoria(long idcategoria) {
 		this.idcategoria = idcategoria;
 	}
 
@@ -60,7 +62,7 @@ public class Categoria {
 		super();
 	}
 
-	public Categoria(int idcategoria, String nombre, String descripcion, boolean estado) {
+	public Categoria(long idcategoria, String nombre, String descripcion, boolean estado) {
 		super();
 		this.idcategoria = idcategoria;
 		this.nombre = nombre;
@@ -68,8 +70,5 @@ public class Categoria {
 		this.estado = estado;
 	}
 
-
-	
-	
 	
 }

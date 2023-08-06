@@ -15,13 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hackaton.interbank.Entity.Categoria;
 import com.hackaton.interbank.Service.ICategoriaService;
+import com.hackaton.interbank.Service.ImplCategoriaService;
 
 @RestController
 @RequestMapping("/Categoria")
 public class CategoriaController {
+	private final ImplCategoriaService service;
 	
 	@Autowired
-	private ICategoriaService service;
+    public CategoriaController(ImplCategoriaService service) {
+        this.service = service;
+    }
 	
 	@GetMapping("Listar")
 	public List<Categoria> findAll(){

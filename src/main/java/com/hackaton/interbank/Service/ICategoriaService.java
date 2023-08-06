@@ -3,14 +3,17 @@ package com.hackaton.interbank.Service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.hackaton.interbank.Entity.Categoria;
+
 
 public interface ICategoriaService  {
 
 	List<Categoria> findAll();
 	
 	//Buscar por codigo
-	Optional<Categoria> findById(int id);
+	Optional<Categoria> findById(long id);
 	
 	//Registrar datos
 	Categoria add(Categoria c);
