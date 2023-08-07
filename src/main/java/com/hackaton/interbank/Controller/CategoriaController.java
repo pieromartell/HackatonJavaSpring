@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hackaton.interbank.Entity.Categoria;
 import com.hackaton.interbank.Service.ICategoriaService;
 
+
 @RestController
 @RequestMapping("/Categoria")
 public class CategoriaController {
+
 	
 	@Autowired
 	private ICategoriaService service;
@@ -37,11 +39,13 @@ public class CategoriaController {
 		return service.add(c);
 	}
 	
+
 	@PutMapping("update/{id}")
 	public Categoria update(@PathVariable int id, @RequestBody Categoria c) {
 		c.setIdcategoria(id);
 		return service.update(c);
 	}
+
 	
 	@DeleteMapping("delete/{id}")
 	public Categoria update(@PathVariable int id) {

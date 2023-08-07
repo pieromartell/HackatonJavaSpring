@@ -6,4 +6,5 @@ import com.hackaton.interbank.Entity.Categoria;
 
 public interface CatgoriaRepository extends JpaRepository<Categoria, Integer>{
 
+
 }

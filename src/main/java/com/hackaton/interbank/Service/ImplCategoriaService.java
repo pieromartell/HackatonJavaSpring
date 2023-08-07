@@ -14,12 +14,14 @@ import com.hackaton.interbank.Repository.CatgoriaRepository;
 public class ImplCategoriaService implements ICategoriaService{
 	@Autowired 
 	private CatgoriaRepository repository;
+
 	
 	
 	@Override
 	public List<Categoria> findAll() {
 		// TODO Auto-generated method stub
 		return repository.findAll();
+
 	}
 
 	
@@ -28,12 +30,14 @@ public class ImplCategoriaService implements ICategoriaService{
 	public Optional<Categoria> findById(int id) {
 		// TODO Auto-generated method stub
 		return repository.findById(id);
+
 	}
 
 	@Override
 	public Categoria add(Categoria c) {
 		// TODO Auto-generated method stub
 		return repository.save(c);
+
 	}
 
 	@Override
@@ -42,6 +46,7 @@ public class ImplCategoriaService implements ICategoriaService{
 		Categoria obj = repository.getById(c.getIdcategoria());
         BeanUtils.copyProperties(c, obj);
         return repository.save(obj);
+
 	}
 
 	@Override
@@ -50,6 +55,7 @@ public class ImplCategoriaService implements ICategoriaService{
 		Categoria obj = repository.getById(c.getIdcategoria());
 		obj.setEstado(false);
         return repository.save(obj);
+
 	}
 
 }
