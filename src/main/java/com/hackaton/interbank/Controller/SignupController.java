@@ -13,15 +13,20 @@ import com.hackaton.interbank.dto.ClienteDTO;
 import com.hackaton.interbank.dto.SignupDTO;
 
 @RestController
-@RequestMapping("/sign-up")
+@RequestMapping
 public class SignupController {
 
 	
 	@Autowired
 	private IClienteService clienteservice;
 	
-	@PostMapping
+	@PostMapping("/sign-up")
 	public ResponseEntity<?> signupCliente(@RequestBody SignupDTO signupDTO){
+		
+		if(clienteservice.hasUserWithUsername(signupDTO.getUsername())) {
+			return new ResponseEntity<>("User alredy exists", HttpStatus.NOT_ACCEPTABLE);
+		}
+		
 		ClienteDTO createCliente = clienteservice.createUser(signupDTO);
 		if(createCliente == null) {
 			return new ResponseEntity<>("No se puede Crear la cuenta, vuelva mas tarde",HttpStatus.BAD_REQUEST);

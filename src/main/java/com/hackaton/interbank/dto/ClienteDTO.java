@@ -2,16 +2,21 @@ package com.hackaton.interbank.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.hackaton.interbank.Entity.Roles;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ClienteDTO {
 
-	public ClienteDTO(int idcliente2, String username2, String name2, String email2, String password2,
-			Boolean estado2) {
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	@Column(name="idcliente")
 	int idcliente;
@@ -30,6 +35,10 @@ public class ClienteDTO {
 	
 	@Column(name="estado")
 	Boolean estado;
+	
+
+	@Column(name="idrol")
+	private Roles roles;
 	
 	//private MultipartFile 
 	

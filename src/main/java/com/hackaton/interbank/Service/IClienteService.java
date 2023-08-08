@@ -23,4 +23,6 @@ public interface IClienteService {
 	Cliente delete(Cliente c);
 
 	ClienteDTO createUser(SignupDTO signupDTO);
+
+	boolean hasUserWithUsername(String username);
 }
