@@ -1,5 +1,5 @@
 # Nota Dejada Por Piero Martell
-Hola Buenas Noches Profesor, ya arregle el problema que le mencione ayer, hice los cruds de las tablas y empeze a realizar el spring security
+Hola Buenas Noches Profesor, ya arregle el problema que le mencione ayer, hice los cruds de las tablas y empeze a realizar el spring security, pero debido a este mismo hecho, no se pueden ejecutar las apis ya que estan protegidas y tengo un nuevo error con el registro
 No se si es mucho pedir, pero le pido que considere tomar eso elementos en consideracion, si es que aun esta evaluando el hackaton de interbank, 
 asi mismo, en breves subo los request en Postman
 Que tenga una Buena Noche
