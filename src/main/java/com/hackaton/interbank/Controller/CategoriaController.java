@@ -29,7 +29,7 @@ public class CategoriaController {
 	public List<Categoria> findAll(){
 		return service.findAll();
 	}
-	@GetMapping("/{id}")
+	@GetMapping("/Listar/{id}")
 	public Optional<Categoria> findById(@PathVariable int id){
 		return service.findById(id);
 	}
@@ -40,14 +40,14 @@ public class CategoriaController {
 	}
 	
 
-	@PutMapping("update/{id}")
+	@PutMapping("/update/{id}")
 	public Categoria update(@PathVariable int id, @RequestBody Categoria c) {
 		c.setIdcategoria(id);
 		return service.update(c);
 	}
 
 	
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public Categoria update(@PathVariable int id) {
 		Categoria obj = new Categoria();
 		obj.setIdcategoria(id);

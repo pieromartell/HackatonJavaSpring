@@ -7,8 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity(name="cupon")
-@Table(name="cupon")
+@Entity
+@Table(name="Cupon")
 public class Cupon {
 
 	
@@ -16,6 +16,9 @@ public class Cupon {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="idcupon")
 	int idcupon;
+	
+	@Column(name="codigo")
+	String codigo;
 	
 	@Column(name="descripcion")
 	String descripcion;
@@ -31,6 +34,15 @@ public class Cupon {
 
 	public void setIdcupon(int idcupon) {
 		this.idcupon = idcupon;
+	}
+	
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getDescripcion() {
@@ -49,13 +61,29 @@ public class Cupon {
 		this.descuento = descuento;
 	}
 
-	public Cupon(int idcupon, String descripcion, String descuento, boolean estado) {
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	
+
+	public Cupon() {
+		super();
+	}
+
+	public Cupon(int idcupon, String codigo, String descripcion, String descuento, boolean estado) {
 		super();
 		this.idcupon = idcupon;
+		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.descuento = descuento;
 		this.estado = estado;
 	}
+
+
 	
 	
 	

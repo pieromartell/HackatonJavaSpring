@@ -13,45 +13,44 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hackaton.interbank.Entity.Cupon;
-import com.hackaton.interbank.Service.ICuponService;
+import com.hackaton.interbank.Entity.Producto;
+import com.hackaton.interbank.Service.IProductoService;
 
 @RestController
-@RequestMapping("/Cupon")
-public class CuponController {
-
+@RequestMapping("/Producto")
+public class ProductoController {
+	
 	@Autowired
-	private ICuponService service;
+	private IProductoService service;
 	
 	@GetMapping("/Listar")
-	public List<Cupon> findAll(){
+	public List<Producto> findAll(){
 		return service.findAll();
 	}
-	
 	@GetMapping("/Listar/{id}")
-	public Optional<Cupon> findById(@PathVariable int id){
+	public Optional<Producto> findById(@PathVariable int id){
 		return service.findById(id);
 	}
 	
 	@PostMapping("/add")
-	public Cupon add(@RequestBody Cupon c) {
+	public Producto add(@RequestBody Producto c) {
 		return service.add(c);
 	}
 	
 
 	@PutMapping("/update/{id}")
-	public Cupon update(@PathVariable int id, @RequestBody Cupon c) {
-		c.setIdcupon(id);
-		return service.Update(c);
+	public Producto update(@PathVariable int id, @RequestBody Producto c) {
+		c.setIdproducto(id);
+		return service.update(c);
 	}
 
 	
 	@DeleteMapping("/delete/{id}")
-	public Cupon update(@PathVariable int id) {
-		Cupon obj = new Cupon();
-		obj.setIdcupon(id);
-		obj.setEstado(false);
+	public Producto Produc(@PathVariable int id) {
+		Producto obj = new Producto();
+		obj.setIdproducto(id);
+		obj.setEstado_p(false);
 		return service.delete(obj);
 	}
-	
+
 }

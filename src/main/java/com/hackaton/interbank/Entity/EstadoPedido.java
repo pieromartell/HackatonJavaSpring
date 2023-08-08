@@ -1,6 +1,5 @@
 package com.hackaton.interbank.Entity;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,9 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity(name="Estado_Pedido")
-@Table(name ="Estado_Pedido")
-public class Estado_Pedido {
+@Entity
+@Table(name ="EstadoPedido")
+public class EstadoPedido {
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY )
 	@Column(name="idEstado")
@@ -18,6 +17,9 @@ public class Estado_Pedido {
 	
 	@Column(name="descripcion")
 	String descripcion;
+	
+	@Column(name="estado")
+	Boolean estado;
 
 	public int getIdEstado() {
 		return idEstado;
@@ -34,17 +36,28 @@ public class Estado_Pedido {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
 
-	public Estado_Pedido() {
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+
+	public EstadoPedido() {
 		super();
 	}
 
-	public Estado_Pedido(int idEstado, String descripcion) {
+	public EstadoPedido(int idEstado, String descripcion, Boolean estado) {
 		super();
 		this.idEstado = idEstado;
 		this.descripcion = descripcion;
+		this.estado = estado;
 	}
+	
+
+
 	
 	
 	

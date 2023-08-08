@@ -7,55 +7,48 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hackaton.interbank.Entity.Categoria;
-import com.hackaton.interbank.Repository.ICategoriaRepository;
+import com.hackaton.interbank.Entity.Cliente;
+import com.hackaton.interbank.Repository.IClienteRepository;
 
 @Service
-public class ImplCategoriaService implements ICategoriaService{
-	@Autowired 
-	private ICategoriaRepository repository;
+public class ImplClienteService implements IClienteService {
+	
+	@Autowired
+	private IClienteRepository repository;
+	
 
-	
-	
 	@Override
-	public List<Categoria> findAll() {
+	public List<Cliente> findAll() {
 		// TODO Auto-generated method stub
 		return repository.findAll();
-
 	}
 
-	
-
 	@Override
-	public Optional<Categoria> findById(int id) {
+	public Optional<Cliente> findById(int id) {
 		// TODO Auto-generated method stub
 		return repository.findById(id);
-
 	}
 
 	@Override
-	public Categoria add(Categoria c) {
+	public Cliente add(Cliente c) {
 		// TODO Auto-generated method stub
 		return repository.save(c);
-
 	}
 
 	@Override
-	public Categoria update(Categoria c) {
+	public Cliente update(Cliente c) {
 		// TODO Auto-generated method stub
-		Categoria obj = repository.getById(c.getIdcategoria());
+		Cliente obj = repository.getById(c.getIdcliente());
         BeanUtils.copyProperties(c, obj);
         return repository.save(obj);
-
 	}
 
 	@Override
-	public Categoria delete(Categoria c) {
+	public Cliente delete(Cliente c) {
 		// TODO Auto-generated method stub
-		Categoria obj = repository.getById(c.getIdcategoria());
+		Cliente obj = repository.getById(c.getIdcliente());
 		obj.setEstado(false);
         return repository.save(obj);
-
 	}
 
 }

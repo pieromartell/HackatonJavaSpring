@@ -7,55 +7,50 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hackaton.interbank.Entity.Categoria;
-import com.hackaton.interbank.Repository.ICategoriaRepository;
+
+import com.hackaton.interbank.Entity.EstadoPedido;
+import com.hackaton.interbank.Repository.IEstadoPedidoRepository;
 
 @Service
-public class ImplCategoriaService implements ICategoriaService{
-	@Autowired 
-	private ICategoriaRepository repository;
+public class ImpEstadoPedido implements IEstadoPedidoService {
+	
+	@Autowired
+	private IEstadoPedidoRepository repository;
 
-	
-	
 	@Override
-	public List<Categoria> findAll() {
+	public List<EstadoPedido> findAll() {
 		// TODO Auto-generated method stub
 		return repository.findAll();
-
 	}
 
-	
-
 	@Override
-	public Optional<Categoria> findById(int id) {
+	public Optional<EstadoPedido> findById(int id) {
 		// TODO Auto-generated method stub
 		return repository.findById(id);
-
 	}
 
 	@Override
-	public Categoria add(Categoria c) {
+	public EstadoPedido add(EstadoPedido e) {
 		// TODO Auto-generated method stub
-		return repository.save(c);
-
+		return repository.save(e);
 	}
 
 	@Override
-	public Categoria update(Categoria c) {
+	public EstadoPedido update(EstadoPedido e) {
 		// TODO Auto-generated method stub
-		Categoria obj = repository.getById(c.getIdcategoria());
-        BeanUtils.copyProperties(c, obj);
+		EstadoPedido obj = repository.getById(e.getIdEstado());
+        BeanUtils.copyProperties(e, obj);
         return repository.save(obj);
-
 	}
 
 	@Override
-	public Categoria delete(Categoria c) {
+	public EstadoPedido delete(EstadoPedido e) {
 		// TODO Auto-generated method stub
-		Categoria obj = repository.getById(c.getIdcategoria());
+		EstadoPedido obj = repository.getById(e.getIdEstado());
 		obj.setEstado(false);
         return repository.save(obj);
 
 	}
+	
 
 }
