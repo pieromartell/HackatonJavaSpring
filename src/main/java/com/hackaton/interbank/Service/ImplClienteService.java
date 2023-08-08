@@ -5,10 +5,13 @@ import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.hackaton.interbank.Entity.Cliente;
 import com.hackaton.interbank.Repository.IClienteRepository;
+import com.hackaton.interbank.dto.ClienteDTO;
+import com.hackaton.interbank.dto.SignupDTO;
 
 @Service
 public class ImplClienteService implements IClienteService {
@@ -49,6 +52,19 @@ public class ImplClienteService implements IClienteService {
 		Cliente obj = repository.getById(c.getIdcliente());
 		obj.setEstado(false);
         return repository.save(obj);
+	}
+
+	@Override
+	public ClienteDTO createUser(SignupDTO signupDTO) {
+		// TODO Auto-generated method stub
+		Cliente cliente = new Cliente();
+		cliente.setUsername(signupDTO.getUsername());
+		cliente.setName(signupDTO.getName());
+		cliente.setEmail(signupDTO.getEmail());
+		cliente.setEstado(signupDTO.getEstado());
+		cliente.setPassword(new BCryptPasswordEncoder().encode(signupDTO.getPassword()));
+		repository.save(cliente);
+		return cliente.mapClienteDTO();
 	}
 
 }

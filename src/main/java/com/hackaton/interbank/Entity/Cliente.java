@@ -1,5 +1,7 @@
 package com.hackaton.interbank.Entity;
 
+import com.hackaton.interbank.dto.ClienteDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +23,9 @@ public class Cliente {
 	@Column(name="username")
 	String username;
 	
+	@Column(name="name")
+	String name;
+	
 	@Column(name="email")
 	String email;
 	
@@ -32,16 +37,27 @@ public class Cliente {
 
 	public Cliente() {
 		super();
-	}
-
-	public Cliente(int idcliente, String username, String email, String password, Boolean estado) {
+	} 
+	
+	public Cliente(int idcliente, String username, String name, String email, String password, Boolean estado) {
 		super();
 		this.idcliente = idcliente;
 		this.username = username;
+		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.estado = estado;
 	}
+	
+	public ClienteDTO mapClienteDTO() {
+		return new ClienteDTO(idcliente,
+				username,name,email,password,estado);
+	}
+
+
+
+
+
 	
 	
 

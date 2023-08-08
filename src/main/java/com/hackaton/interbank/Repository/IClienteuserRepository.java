@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.hackaton.interbank.Entity.Cliente;
 
-public interface IClienteRepository extends JpaRepository<Cliente, Integer> {
-
+public interface IClienteuserRepository extends JpaRepository<Cliente, Integer> {
+	@Query("SELECT c FROM Cliente c WHERE c.username = :username")
+	Cliente FindFirstByUsername(String username);
 }

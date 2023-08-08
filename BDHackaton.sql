@@ -28,10 +28,12 @@ create table EstadoPedido(
 create table Cliente(
 	idcliente int primary key auto_increment,
     username varchar(50) not null,
+    name varchar(50) not null,
     email varchar(100) not null,
     password varchar(50) not null,
     estado boolean not null
 );
+
 
 create table Producto(
 	idproducto int primary key auto_increment,
@@ -84,12 +86,14 @@ VALUES
 INSERT INTO `hackaton`.`cliente`
 (
 `username`,
+`name`,
 `email`,
 `password`,
 `estado`)
 VALUES
 (
 "PieroXD",
+"Piero",
 "PieroMartell@gmail.com",
 "pierom689",
 1);
@@ -163,7 +167,10 @@ VALUES
 12);
 
 
+
+
 select * from estadopedido;
+select * from Cliente;
 select * from pedido;
 Select * from Categoria;
 select * from Estado
