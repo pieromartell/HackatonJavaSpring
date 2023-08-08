@@ -10,9 +10,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name="Pedido")
+@Data
 public class Pedido {
 
 	
@@ -45,70 +47,7 @@ public class Pedido {
 	@JoinColumn(name="idcupon")
 	private Cupon cupon;
 
-	public int getIdpedido() {
-		return idpedido;
-	}
-
-	public void setIdpedido(int idpedido) {
-		this.idpedido = idpedido;
-	}
-
-	public Date getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-
-	public double getSubtotal() {
-		return subtotal;
-	}
-
-	public void setSubtotal(double subtotal) {
-		this.subtotal = subtotal;
-	}
-
-	public double getIgv() {
-		return igv;
-	}
-
-	public void setIgv(double igv) {
-		this.igv = igv;
-	}
-
-	public double getTotal() {
-		return total;
-	}
-
-	public void setTotal(double total) {
-		this.total = total;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public EstadoPedido getEstadoPeiddo() {
-		return estadoPeiddo;
-	}
-
-	public void setEstadoPeiddo(EstadoPedido estadoPeiddo) {
-		this.estadoPeiddo = estadoPeiddo;
-	}
-
-	public Cupon getCupon() {
-		return cupon;
-	}
-
-	public void setCupon(Cupon cupon) {
-		this.cupon = cupon;
-	}
-
+	
 	public Pedido() {
 		super();
 	}

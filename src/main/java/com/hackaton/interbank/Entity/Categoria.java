@@ -6,10 +6,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Table(name="Categoria")
 @Entity
+@Data
 public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,40 +28,6 @@ public class Categoria {
 	@Column(name="estado")
 	boolean estado;
 	
-
-	public boolean isEstado() {
-		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
-
-
-	public int getIdcategoria() {
-		return idcategoria;
-	}
-
-	public void setIdcategoria(int idcategoria) {
-
-		this.idcategoria = idcategoria;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
 
 	public Categoria() {
 		super();

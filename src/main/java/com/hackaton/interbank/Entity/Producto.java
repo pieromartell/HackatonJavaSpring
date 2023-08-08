@@ -8,9 +8,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name="Producto")
+@Data
 public class Producto {
 	
 	@Id
@@ -43,77 +45,7 @@ public class Producto {
 	@JoinColumn(name="idcategoria")
 	private Categoria categoria;
 
-	public int getIdproducto() {
-		return idproducto;
-	}
-
-	public void setIdproducto(int idproducto) {
-		this.idproducto = idproducto;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	public double getIgv() {
-		return igv;
-	}
-
-	public void setIgv(double igv) {
-		this.igv = igv;
-	}
-
-	public String getImagen() {
-		return imagen;
-	}
-
-	public void setImagen(String imagen) {
-		this.imagen = imagen;
-	}
-
-	public double getDescuento() {
-		return descuento;
-	}
-
-	public void setDescuento(double descuento) {
-		this.descuento = descuento;
-	}
-
-	public String getIamgen1() {
-		return iamgen1;
-	}
-
-	public void setIamgen1(String iamgen1) {
-		this.iamgen1 = iamgen1;
-	}
-
-	public boolean isEstado_p() {
-		return estado_p;
-	}
-
-	public void setEstado_p(boolean estado_p) {
-		this.estado_p = estado_p;
-	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
+	
 
 	public Producto() {
 		super();

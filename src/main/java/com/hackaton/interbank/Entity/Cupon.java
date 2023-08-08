@@ -6,9 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name="Cupon")
+@Data
 public class Cupon {
 
 	
@@ -28,46 +30,7 @@ public class Cupon {
 
 	@Column(name="estado")
 	boolean estado;
-	public int getIdcupon() {
-		return idcupon;
-	}
 
-	public void setIdcupon(int idcupon) {
-		this.idcupon = idcupon;
-	}
-	
-
-	public String getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	public String getDescuento() {
-		return descuento;
-	}
-
-	public void setDescuento(String descuento) {
-		this.descuento = descuento;
-	}
-
-	public boolean isEstado() {
-		return estado;
-	}
-
-	public void setEstado(boolean estado) {
-		this.estado = estado;
-	}
 	
 
 	public Cupon() {

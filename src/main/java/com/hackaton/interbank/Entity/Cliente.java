@@ -6,9 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name ="Cliente")
+@Data
 public class Cliente {
 	
 	@Id
@@ -27,46 +29,6 @@ public class Cliente {
 	
 	@Column(name="estado")
 	Boolean estado;
-
-	public int getIdcliente() {
-		return idcliente;
-	}
-
-	public void setIdcliente(int idcliente) {
-		this.idcliente = idcliente;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Boolean getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Boolean estado) {
-		this.estado = estado;
-	}
 
 	public Cliente() {
 		super();

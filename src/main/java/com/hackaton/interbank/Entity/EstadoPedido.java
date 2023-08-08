@@ -6,9 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
 @Table(name ="EstadoPedido")
+@Data
 public class EstadoPedido {
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY )
@@ -21,29 +23,6 @@ public class EstadoPedido {
 	@Column(name="estado")
 	Boolean estado;
 
-	public int getIdEstado() {
-		return idEstado;
-	}
-
-	public void setIdEstado(int idEstado) {
-		this.idEstado = idEstado;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	public Boolean getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Boolean estado) {
-		this.estado = estado;
-	}
 
 	public EstadoPedido() {
 		super();
