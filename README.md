@@ -1,3 +1,9 @@
+# Nota Dejada Por Piero Martell
+Hola Buenas Noches Profesor, ya arregle el problema que le mencione ayer, hice los cruds de las tablas y empeze a realizar el spring security
+No se si es mucho pedir, pero le pido que considere tomar eso elementos en consideracion, si es que aun esta evaluando el hackaton de interbank, 
+asi mismo, en breves subo los request en Postman
+Que tenga una Buena Noche
+
 # HACKATON INTERBANK
 ## LOGRO: desarrollar un e-commerce y/o tienda virtual orientada al responsive web design, aplicando siempre los estándares adecuados de desarrollo. 
 
