@@ -16,8 +16,6 @@ import com.hackaton.interbank.Repository.IClienteuserRepository;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-	@Autowired
-	private IClienteRepository clienteRepository;
 	
 	@Autowired
 	private IClienteuserRepository clienteuserRepository;

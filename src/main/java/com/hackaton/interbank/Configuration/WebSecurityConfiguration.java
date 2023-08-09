@@ -30,7 +30,7 @@ public class WebSecurityConfiguration  {
 	public SecurityFilterChain securityFilterChaunChain(HttpSecurity http) throws Exception{
 		return http.csrf().disable()
 				.authorizeHttpRequests()
-				.requestMatchers("/authenticate","/sign-up","/Cliente/Listar").permitAll()
+				.requestMatchers("/authenticate","/sign-up").permitAll()
 				.and()
 				.authorizeHttpRequests().requestMatchers("/api/**")
 				.authenticated().and()
