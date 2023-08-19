@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hackaton.interbank.Entity.Rol;
+
 import com.hackaton.interbank.Service.IRolesService;
 
 @RestController
@@ -26,17 +27,20 @@ public class RolesController {
 	
 	
 	@GetMapping("Listar")
+
 	public List<Rol> findAll(){
 		return service.findAll();
 	}
 	
 	@GetMapping("Listar/{id}")
 	public Optional<Rol> findById(@PathVariable int id){
+
 		return service.FindById(id);
 	}
 	
 	@PostMapping("/add")
 	public Rol add(@RequestBody Rol r) {
+
 		return service.add(r);
 	}
 	
@@ -45,7 +49,6 @@ public class RolesController {
 		r.setIdrol(id);
 		return service.update(r);
 	}
-	
 	@DeleteMapping("/delete/{id}")
 	public Rol roles(@PathVariable int id) {
 		Rol obj = new Rol();

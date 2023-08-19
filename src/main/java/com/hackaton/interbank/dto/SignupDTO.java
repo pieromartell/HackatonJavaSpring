@@ -2,6 +2,7 @@ package com.hackaton.interbank.dto;
 
 import com.hackaton.interbank.Entity.Rol;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -29,6 +30,8 @@ public class SignupDTO {
 	Boolean estado;
 
 	@Column(name="idrol")
+
 	private Rol roles;
+
 
 }

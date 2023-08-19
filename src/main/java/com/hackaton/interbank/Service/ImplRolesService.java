@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hackaton.interbank.Entity.Rol;
+
 import com.hackaton.interbank.Repository.IRolesRepository;
 
 import ch.qos.logback.core.joran.util.beans.BeanUtil;
@@ -32,6 +33,7 @@ public class ImplRolesService implements IRolesService{
 
 	@Override
 	public Rol add(Rol r) {
+
 		// TODO Auto-generated method stub
 		return repository.save(r);
 	}
@@ -48,6 +50,7 @@ public class ImplRolesService implements IRolesService{
 	public Rol delete(Rol r) {
 		// TODO Auto-generated method stub
 		Rol obj = repository.getById(r.getIdrol());
+
 		obj.setEstado(false);	
 		return repository.save(obj);
 	}

@@ -48,6 +48,7 @@ public class Cliente {
 	@JoinColumn(name="idrol")
 	private Rol roles; 
 
+
 	public ClienteDTO mapClienteDTO() {
 		return new ClienteDTO(idcliente,
 				username,name,email,password,estado,roles);

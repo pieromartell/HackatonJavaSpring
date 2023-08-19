@@ -2,7 +2,9 @@ package com.hackaton.interbank.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
+
 import com.hackaton.interbank.Entity.Rol;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
@@ -39,6 +41,7 @@ public class ClienteDTO {
 
 	@Column(name="idrol")
 	private Rol roles;
+
 	
 	//private MultipartFile 
 	

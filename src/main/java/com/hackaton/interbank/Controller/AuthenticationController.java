@@ -38,6 +38,7 @@ public class AuthenticationController {
 	
 	@Autowired
 	private  UserDetailsServiceImpl userDetailServiceImpl;
+
 	
 	@Autowired
 	private IClienteuserRepository clienteuserRepository;

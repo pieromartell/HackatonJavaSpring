@@ -16,6 +16,4 @@ public interface IRolesService {
 	Rol update(Rol r);
 	
 	Rol delete(Rol r);
-	
-
 }

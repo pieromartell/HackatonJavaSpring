@@ -6,4 +6,5 @@ import com.hackaton.interbank.Entity.Rol;
 
 public interface IRolesRepository extends JpaRepository<Rol, Integer> {
 
+
 }
