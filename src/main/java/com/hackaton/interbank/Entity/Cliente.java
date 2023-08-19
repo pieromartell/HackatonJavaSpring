@@ -46,7 +46,7 @@ public class Cliente {
 
 	@ManyToOne
 	@JoinColumn(name="idrol")
-	private Roles roles; 
+	private Rol roles; 
 
 	public ClienteDTO mapClienteDTO() {
 		return new ClienteDTO(idcliente,

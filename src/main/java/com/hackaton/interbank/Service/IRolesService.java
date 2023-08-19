@@ -3,19 +3,19 @@ package com.hackaton.interbank.Service;
 import java.util.List;
 import java.util.Optional;
 
-import com.hackaton.interbank.Entity.Roles;
+import com.hackaton.interbank.Entity.Rol;
 
 public interface IRolesService {
 	
-	List<Roles> findAll();
+	List<Rol> findAll();
 	 
-	Optional<Roles> FindById(int id);
+	Optional<Rol> FindById(int id);
 	
-	Roles add (Roles r);
+	Rol add (Rol r);
 	
-	Roles update(Roles r);
+	Rol update(Rol r);
 	
-	Roles delete(Roles r);
+	Rol delete(Rol r);
 	
 
 }

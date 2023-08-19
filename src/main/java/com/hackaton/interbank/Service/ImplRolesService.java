@@ -7,7 +7,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hackaton.interbank.Entity.Roles;
+import com.hackaton.interbank.Entity.Rol;
 import com.hackaton.interbank.Repository.IRolesRepository;
 
 import ch.qos.logback.core.joran.util.beans.BeanUtil;
@@ -19,35 +19,35 @@ public class ImplRolesService implements IRolesService{
 	
 	
 	@Override
-	public List<Roles> findAll() {
+	public List<Rol> findAll() {
 		// TODO Auto-generated method stub
 		return repository.findAll();
 	}
 
 	@Override
-	public Optional<Roles> FindById(int id) {
+	public Optional<Rol> FindById(int id) {
 		// TODO Auto-generated method stub
 		return repository.findById(id);
 	}
 
 	@Override
-	public Roles add(Roles r) {
+	public Rol add(Rol r) {
 		// TODO Auto-generated method stub
 		return repository.save(r);
 	}
 
 	@Override
-	public Roles update(Roles r) {
+	public Rol update(Rol r) {
 		// TODO Auto-generated method stub
-		Roles obj = repository.getById(r.getIdrol());
+		Rol obj = repository.getById(r.getIdrol());
 		BeanUtils.copyProperties(r, obj);
 		return repository.save(obj);
 	}
 
 	@Override
-	public Roles delete(Roles r) {
+	public Rol delete(Rol r) {
 		// TODO Auto-generated method stub
-		Roles obj = repository.getById(r.getIdrol());
+		Rol obj = repository.getById(r.getIdrol());
 		obj.setEstado(false);	
 		return repository.save(obj);
 	}

@@ -34,10 +34,10 @@ public class AuthenticationController {
 	
 	
 	@Autowired
-	private AuthenticationManager authenticationManager;
+	private  AuthenticationManager authenticationManager;
 	
 	@Autowired
-	private UserDetailsServiceImpl userDetailServiceImpl;
+	private  UserDetailsServiceImpl userDetailServiceImpl;
 	
 	@Autowired
 	private IClienteuserRepository clienteuserRepository;
