@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registro de Usuario</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand bg-white px-2" href="#" th:href="@{/Index}">  PROYECTO HACKATON  </a>
+  </div>
+</nav>
+
+
+	<div class="container bg-dark text-white py-4 mt-5 w-25">
+		<h1 class="text-center"> Registro de Usuario </h1>
+		<form th:action="@{/sign-up}" method="post" onsubmit="sendData(event)" class="px-3"  >
+			<label class="form-label" for="name">Nombre Completo</label>
+			<input class="form-control" th:field="${signupDTO.name}" id="name"  type="text"  required>
+			<br>
+			<label class="form-label" for="username">Nombre de Usuario</label>
+			<input class="form-control" th:field="${signupDTO.username}" id="username" type="text"  required>
+			<br>
+			<label class="form-label" for="email">Correo ELectronico</label>
+			<input class="form-control"  th:field="${signupDTO.email}" id="email" type="text"  required>
+			<br>
+			<label class="form-label" for="passwor">Contraseña</label>
+			<input class="form-control" th:field="${signupDTO.password}" id="password" type="text" required>
+			<br>
+			<input  class="form-control" th:field="${signupDTO.estado}" id="estado"  type="hidden" value="True" >
+						
+			<input  class="form-control" th:field="${signupDTO.roles}" id="roles"  type="hidden" value="1"  >
+			<br>
+			<button class="btn btn-primary" type="submit"> Crear Cuenta</button>
+			<br/>
+			<span class="text-center">Si estas registrado <a>Iniciar Sesion aqui</a> </span>
+		</form>
+	</div>
+	
+	<div th:replace="footer :: footer"></div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	<script th:src="@{/js/registrousuario.js}">
+	</script>
+</body>
+</html>

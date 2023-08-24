@@ -8,9 +8,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.core.io.JsonEOFException;
 import com.hackaton.interbank.Entity.Cliente;
@@ -20,12 +23,11 @@ import com.hackaton.interbank.Service.jwt.UserDetailsServiceImpl;
 import com.hackaton.interbank.Utils.JwUtil;
 import com.hackaton.interbank.dto.AuthenticationRequest;
 import com.hackaton.interbank.dto.AuthenticationResponse;
-
 import io.jsonwebtoken.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import org.springframework.ui.Model;
 @RestController
 public class AuthenticationController {
 	
@@ -45,6 +47,23 @@ public class AuthenticationController {
 	
 	@Autowired
 	private JwUtil jwUtil;
+	
+	
+	@GetMapping("/Login")
+	public ModelAndView mostrarFormularioLogin(Model modelo) {
+		System.out.println("Iniciando el formulario Login");
+	    
+	    ModelAndView modelAndView = new ModelAndView(); 
+	    modelAndView.setViewName("login"); 
+	    
+	    modelAndView.addObject("authenticationRequest", new AuthenticationRequest());
+	    return modelAndView; 
+	}
+	
+	
+	
+	
+	
 	
 	@PostMapping("/authenticate")
     public AuthenticationResponse createAuthenticationToken(@RequestBody AuthenticationRequest authenticationDTO, HttpServletResponse response) throws BadCredentialsException, DisabledException, UsernameNotFoundException, IOException, java.io.IOException {
@@ -67,6 +86,7 @@ public class AuthenticationController {
         return new AuthenticationResponse(jwt);
 
     }
+	
 	
 	
 }
