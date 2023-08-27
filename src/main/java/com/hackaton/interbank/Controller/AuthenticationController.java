@@ -25,6 +25,7 @@ import com.hackaton.interbank.dto.AuthenticationRequest;
 import com.hackaton.interbank.dto.AuthenticationResponse;
 import io.jsonwebtoken.io.IOException;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.ui.Model;
@@ -83,6 +84,13 @@ public class AuthenticationController {
         if(jwt != null) {
         	System.out.print(jwt);
         }
+        
+        Cookie jwtCookie = new Cookie("jwtToken", jwt);
+        jwtCookie.setMaxAge(3600);
+        jwtCookie.setPath("/");
+        response.addCookie(jwtCookie);
+        
+        
         return new AuthenticationResponse(jwt);
 
     }

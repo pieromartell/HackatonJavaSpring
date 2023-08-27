@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
+<meta http-equiv="X-UA-Compatible">
 <title>Login de Usuario</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/footer.css">
@@ -9,27 +10,30 @@
 <body>
  <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand bg-white px-2" href="#" th:href="@{/Index}">  PROYECTO HACKATON  </a>
+    <a class="navbar-brand bg-white px-2" href="#" th:href="@{/Index}" >  PROYECTO HACKATON  </a>
   </div>
 </nav>
 	<div class="container bg-dark text-white py-4 mt-5 w-25">
 		<h1 class="text-center"> Iniciar Sesion </h1>
-		<form th:action="@{/authenticate}" method="post" class="px-3"  >
+		<form th:action="@{/authenticate}" method="post" class="px-3"  onSubmit="LoginData(event)">
 
 			<label class="form-label" for="username">Nombre de Usuario</label>
 			<input class="form-control" th:field="${authenticationRequest.username}" id="username" type="text"  required>
 			<br>
 
-			<label class="form-label" for="password">Contraseña</label>
+			<label class="form-label" for="password">Clave</label>
 			<input class="form-control" th:field="${authenticationRequest.password}" id="password" type="password" required>
 			<br>
 
-			<a class="btn btn-primary text-center" type="submit"> Login</a>
+			<button class="btn btn-primary text-center" type="submit"> Iniciar Sesion</button>
 			<br/>
-			<span class="text-center">Si no estas registrado <a>Registrate aqui</a> </span>
+			<span class="text-center">Si no estas registrado <a th:href="@{/Registrar}">Registrate aqui</a> </span>
 		</form>
 	</div>
 	
 	<div th:replace="footer :: footer"></div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	
+	<script th:src="@{/js/LoginUsuario.js}"></script>
 </body>
 </html>
