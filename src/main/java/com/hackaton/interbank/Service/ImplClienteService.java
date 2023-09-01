@@ -87,4 +87,14 @@ public class ImplClienteService implements IClienteService {
 		return userrepository.FindFirstByUsername(username) != null;
 	}
 
+	@Override
+	public Long getRoleIdByUsername(String username) {
+		// TODO Auto-generated method stub
+		return repository.findIdrolByUsername(username);
+	}
+
+
+	
+	
+
 }

@@ -12,6 +12,12 @@ function sendData(event) {
 		}
     };
     
+    if(formData.name == null || formData.username == null || formData.email || formData.password){
+			let MensajeA = "!Ocurrio un Error¡";
+			let MensajaB = "Tiene un campo vacio, por favor, complete todo el formulario"
+			MensajeModal(MensajeA,MensajaB)
+	}
+    
     fetch(event.target.action, {
         method: 'POST',
         headers: {
@@ -22,13 +28,40 @@ function sendData(event) {
 	
 		if(response.ok){
 			console.log("Se realizo correctamente")
+			let MensajeA = "!Registro Exitoso¡";
+			let MensajaB = "Se Registro Correctamente, Redirigiendo a la pagina de Inicio de Sesion"
+			MensajeModal(MensajeA,MensajaB)
+			setTimeout(()=>{
+				window.location.href="/Login";
+			},3000)
+			
 		}else{
 			console.log("Hubo un problema al procesar la solicitud", response.statusText)
+			let MensajeA = "!Ocurrio un Error¡";
+			let MensajaB = "Error en el Proceso de la Solicitud, Comuniquese con el equipo de Desarrollo"
+			MensajeModal(MensajeA,MensajaB)
 			
 		}
 	
         
     }).catch(error =>{
-		console.error("Ocurrio un errro durante la solicitud", error)
+		console.error("Ocurrio un errror durante la solicitud", error)
+			let MensajeA = "Ocurrio un Error";
+			let MensajaB = "Error en el Durante la Solicitud, Comuniquese con el equipo de Desarrollo"
+			MensajeModal(MensajeA,MensajaB)
 	});
+}
+
+
+function mostrarModal(){
+	$('#modal').modal('Show')
+}
+
+function MensajeModal(MenA, MenB){
+			const modal = document.getElementById('modal-tittle');
+			modal.textContent = MenA;
+			console.log(MenA)
+			const modaltext = document.getElementById("text-modal");
+			console.log(MenB)
+			modaltext.textContent=MenB
 }

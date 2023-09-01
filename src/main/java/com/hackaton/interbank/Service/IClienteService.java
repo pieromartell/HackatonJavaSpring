@@ -25,4 +25,6 @@ public interface IClienteService {
 	ClienteDTO createUser(SignupDTO signupDTO);
 
 	boolean hasUserWithUsername(String username);
+	
+	Long getRoleIdByUsername(String username);
 }

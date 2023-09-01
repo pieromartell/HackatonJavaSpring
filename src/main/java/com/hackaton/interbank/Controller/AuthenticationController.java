@@ -78,12 +78,21 @@ public class AuthenticationController {
         }
 
         final UserDetails userDetails = userDetailServiceImpl.loadUserByUsername(authenticationDTO.getUsername());
-
+        Long Id = clienteService.getRoleIdByUsername(authenticationDTO.getUsername());
+        String idAsString = String.valueOf(Id);;
+        System.out.println("Id cliente"+ Id);
+        
          String jwt = jwUtil.generateToken(userDetails.getUsername());
+         
+        
 
         if(jwt != null) {
         	System.out.print(jwt);
         }
+        Cookie rolecookie = new Cookie("idrol", idAsString);
+        rolecookie.setMaxAge(3600);
+        rolecookie.setPath("/");
+        response.addCookie(rolecookie);
         
         Cookie jwtCookie = new Cookie("jwtToken", jwt);
         jwtCookie.setMaxAge(3600);

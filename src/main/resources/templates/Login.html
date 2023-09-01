@@ -25,13 +25,28 @@
 			<input class="form-control" th:field="${authenticationRequest.password}" id="password" type="password" required>
 			<br>
 
-			<button class="btn btn-primary text-center" type="submit"> Iniciar Sesion</button>
+			<button class="btn btn-primary text-center" type="submit" data-bs-toggle="modal" data-bs-target="#modal"> Iniciar Sesion</button>
 			<br/>
 			<span class="text-center">Si no estas registrado <a th:href="@{/Registrar}">Registrate aqui</a> </span>
 		</form>
 	</div>
 	
-	<div th:replace="footer :: footer"></div>
+		<div class="modal" tabindex="-1" id="modal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="modal-tittle">Ocurrio un Error</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        <p id="text-modal">Tiene que completar todos los campos del formulario</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	
+	<div th:replace="~{footer :: footer}"></div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 	
 	<script th:src="@{/js/LoginUsuario.js}"></script>
